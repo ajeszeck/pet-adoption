@@ -5,16 +5,29 @@
   <link rel="stylesheet" href="/css/application.css">
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
-  <title></title>
+  <title>Adopt</title>
 </head>
 <body>
   <header>
-    <ul>
-      <li><a href="/pets">Home</a></li>
-      <li><a href="/sessions/new">Login</a></li>
-      <li><a href="/users/new">Register</a></li>
-    </ul>
-
+    <nav>
+      <ul>
+        <li><a href="/pets">Home</a></li>
+        <% if session[:user_id] == nil %>
+          <li><a href="/sessions/new">Login</a></li>
+          <li><a href="/users/new">Register</a></li>
+        <% end %>
+        <% if session[:user_id] %>
+          <li>
+            <a href="/users/<%= session[:user_id] %>">Welcome Back, <%= User.find(session[:user_id]).username %></a>
+          </li>
+          <li><form class="logout" action="/sessions" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" value="logout">
+            </form>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
   </header>
   <%= yield %>
   <footer></footer>
