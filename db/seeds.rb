@@ -1,6 +1,6 @@
 require 'faker'
 
-5.times do
+20.times do
   User.create(full_name: Faker::Name.name,
               username: Faker::Internet.user_name,
               email: Faker::Internet.safe_email)

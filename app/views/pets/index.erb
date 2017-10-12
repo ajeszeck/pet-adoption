@@ -1,0 +1,10 @@
+<h1>Pets for Adoption</h1>
+<ul>
+  <% @pets.each do |pet| %>
+    <a href="/pets/<%= pet.id %>"> <p class="name"><%= pet.name %></p></a>
+    <img src="http://via.placeholder.com/150x150" alt="Placeholder photo frame">
+    <li> <%= pet.species %> </li>
+    <li> <%= pet.color %> </li>
+    <li> <%= pet.age %> </li>
+  <% end %>
+</ul>
