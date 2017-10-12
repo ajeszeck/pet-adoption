@@ -1,7 +1,7 @@
-
+<h1>Pets for Adoption</h1>
 <ul>
   <% @pets.each do |pet| %>
-    <h4> <%= pet.name %> </h4>
+    <a href="/pets/<%= pet.id %>"> <p class="name"><%= pet.name %></p></a>
     <li> <%= pet.species %> </li>
     <li> <%= pet.color %> </li>
     <li> <%= pet.age %> </li>
