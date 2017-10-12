@@ -1,0 +1,9 @@
+
+<ul>
+  <% @pets.each do |pet| %>
+    <h4> <%= pet.name %> </h4>
+    <li> <%= pet.species %> </li>
+    <li> <%= pet.color %> </li>
+    <li> <%= pet.age %> </li>
+  <% end %>
+</ul>
