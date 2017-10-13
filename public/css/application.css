@@ -1,0 +1,44 @@
+html {
+  /*background-color: #c6eaac;*/
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.header-title {
+  text-decoration: none;
+  color: #88b398;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+}
+
+.nav li {
+  margin-left: 1rem;
+}
+
+.username {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.button {
+  background-color: #011b2c;
+  border: none;
+  color: white;
+  padding: 1rem;
+  border-radius: 5%;
+  margin-right: 0.5rem;
+}
