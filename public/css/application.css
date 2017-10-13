@@ -43,3 +43,10 @@ nav {
   margin-left: 1rem;
   margin-bottom: 1rem;
 }
+
+.errors {
+  font-size: 0.8rem;
+  color: red;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}

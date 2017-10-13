@@ -7,9 +7,16 @@
   </ul>
 
   <% if session[:user_id] %>
+
     <form action="" method="post">
       <input class="button" type="submit" value="Adopt">
     </form>
+
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <p class="errors"><%= error %></p>
+      <% end %>
+    <% end %>
 
     <form action="/pets/<%= @pet.id %>/followers_pets" method="post">
       <input class="button" type="submit" value="Add to watch list">
