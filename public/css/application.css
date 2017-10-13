@@ -39,6 +39,7 @@ nav {
   border: none;
   color: white;
   padding: 1rem;
-  border-radius: 5%;
   margin-right: 0.5rem;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }

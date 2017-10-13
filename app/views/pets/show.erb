@@ -1,15 +1,24 @@
+<div class="pet-details">
+  <h2><p class="name"><%= @pet.name %></p></h2>
+  <ul>
+    <li> <%= @pet.species %> </li>
+    <li> <%= @pet.color %> </li>
+    <li> <%= @pet.age %> </li>
+  </ul>
 
-<h2><p class="name"><%= @pet.name %></p></h2>
-<ul>
-  <li> <%= @pet.species %> </li>
-  <li> <%= @pet.color %> </li>
-  <li> <%= @pet.age %> </li>
-</ul>
+  <% if session[:user_id] %>
+    <form action="" method="post">
+      <input class="button" type="submit" value="Adopt">
+    </form>
 
-<form action="" method="post">
-  <input type="submit" value="Adopt">
-</form>
+    <form action="/pets/<%= @pet.id %>/followers_pets" method="post">
+      <input class="button" type="submit" value="Add to watch list">
+    </form>
+  <% else %>
+    <a href="/sessions/new">login to follow or adopt <%= @pet.name %></a>
+  <% end %>
+</div>
 
-<form action="/" method="post">
-  <input type="submit" value="Add to watch list">
-</form>
+<div class="follower-details">
+  <p><%= @pet.name %> is on <%= @pet.followers.count %> user's watch lists</p>
+</div>
