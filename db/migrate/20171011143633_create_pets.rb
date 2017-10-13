@@ -6,6 +6,7 @@ class CreatePets < ActiveRecord::Migration
       t.string :color, null: false
       t.integer :age, null: false
       t.boolean :adopted, null: false
+      t.string :image, null: false
 
       t.timestamps
     end

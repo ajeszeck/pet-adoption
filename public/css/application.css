@@ -1,11 +1,14 @@
 html {
-  /*background-color: #c6eaac;*/
+  background-color: #2c3e50;
 }
 
 h1 {
   font-size: 3rem;
 }
 
+header {
+  background-color: #34495e;
+}
 .header-title {
   text-decoration: none;
   color: #88b398;
@@ -49,4 +52,99 @@ nav {
   color: red;
   margin-bottom: 0.5rem;
   margin-left: 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+}
+
+.pet {
+  display: flex;
+  flex-direction: row;
+}
+/*.search-menu {
+  background-color: #88b398;
+  width: 33%;
+  height: 100%;
+  border: 3px solid black;
+}*/
+
+.pet-details {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+
+.pet-show-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2c3e50;
+}
+
+.pet-show-details ul {
+  list-style: none;
+  color: white;
+}
+
+.pet-show-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  background-color: #2c3e50;
+}
+
+.follower-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.follow-count {
+  color: white;
+}
+
+.pet-frame {
+  /*border: 1px dashed black;*/
+  padding: 1rem;
+  margin: 1rem;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #34495e;
+}
+.pet-name {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.heart {
+  margin-left: 0;
+  margin-right: 0.8rem;
+}
+
+.headline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa-heart-o {
+  color: white;
+}
+
+#follow-button {
+  background-color: transparent;
+  border: none;
+}
+
+.fa-heart {
+  color: #e74c3c;
 }

@@ -1,0 +1,26 @@
+<h2>My Account</h2>
+<div class="account-details">
+  <ul>
+    <li>Full Name: <%= @user.full_name %></li>
+    <li>Username: <%= @user.username %></li>
+    <li>Email: <%= @user.email %></li>
+  </ul>
+</div>
+<div class="followed-pets">
+  <h4>Followed Pets</h4>
+  <% if @user.followed_pets.count == 0 %>
+    <p>You haven't adopted any pets.</p>
+  <% else %>
+    <ul>
+      <% @user.followed_pets.each do |pet| %>
+        <li><a href="/pets/<%= pet.id %>"><%= pet.name %></a> the <%= pet.species %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+<div class="adopted-pets">
+  <h4>Adopted Pets</h4>
+  <ul>
+    <li>You have no adopted any pets. :'(</li>
+  </ul>
+</div>

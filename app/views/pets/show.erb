@@ -1,31 +1,33 @@
-<div class="pet-details">
-  <h2><p class="name"><%= @pet.name %></p></h2>
-  <ul>
-    <li> Type: <%= @pet.species %> </li>
-    <li> Color: <%= @pet.color %> </li>
-    <li> Age: <%= @pet.age %> </li>
-  </ul>
+<div class="pet-show-page">
+  <div class="pet-show-details">
+    <h2><p class="name"><%= @pet.name %></p></h2>
+    <img src="http://lorempixel.com/150/150/animals" alt="Placeholder photo frame">
+    <ul>
+      <li> Type: <%= @pet.species %> </li>
+      <li> Color: <%= @pet.color %> </li>
+      <li> Age: <%= @pet.age %> </li>
+    </ul>
+  </div>
 
-  <% if session[:user_id] %>
+  <div class="follower-details">
+    <p class="follow-count"><%= @pet.name %> has <%= @pet.followers.count %> followers</p>
+    <% if session[:user_id] %>
 
-    <form action="" method="post">
-      <input class="button" type="submit" value="Adopt">
-    </form>
+      <form action="" method="post">
+        <input class="button" type="submit" value="Adopt">
+      </form>
 
-    <% if @errors %>
-      <% @errors.each do |error| %>
-        <p class="errors"><%= error %></p>
+      <% if @errors %>
+        <% @errors.each do |error| %>
+          <p class="errors"><%= error %></p>
+        <% end %>
       <% end %>
+
+      <form action="/pets/<%= @pet.id %>/followers_pets" method="post">
+        <input class="button" type="submit" value="Follow">
+      </form>
+    <% else %>
+      <a href="/sessions/new">login to follow or adopt <%= @pet.name %></a>
     <% end %>
-
-    <form action="/pets/<%= @pet.id %>/followers_pets" method="post">
-      <input class="button" type="submit" value="Add to watch list">
-    </form>
-  <% else %>
-    <a href="/sessions/new">login to follow or adopt <%= @pet.name %></a>
-  <% end %>
-</div>
-
-<div class="follower-details">
-  <p><%= @pet.name %> is on <%= @pet.followers.count %> user's watch lists</p>
+  </div>
 </div>

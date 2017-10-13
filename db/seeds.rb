@@ -11,5 +11,6 @@ end
              species: Faker::Pokemon.name,
              color: Faker::Color.color_name,
              age: Faker::Number.between(1, 20),
-             adopted: [true, false].sample )
+             adopted: [true, false].sample ,
+             image: Faker::LoremPixel.image("150x150", false, 'animals'))
 end

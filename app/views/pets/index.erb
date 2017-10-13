@@ -1,10 +1,30 @@
-<h2>Pets for Adoption</h2>
-<ul>
-  <% @pets.each do |pet| %>
-    <a href="/pets/<%= pet.id %>"> <p class="name"><%= pet.name %></p></a>
-    <img src="http://via.placeholder.com/150x150" alt="Placeholder photo frame">
-    <li> <%= pet.species %> </li>
-    <li> <%= pet.color %> </li>
-    <li> <%= pet.age %> </li>
-  <% end %>
-</ul>
+<h2>Featured Adoptable Pets</h2>
+<div class="pet">
+  <div class="search-menu">
+
+  </div>
+  <div class="pet-details">
+    <% @pets.each do |pet| %>
+    <div class="pet-frame">
+      <img src="<%= pet.image %>" alt="Random animal">
+      <div class="headline">
+        <div class="heart">
+          <% if FollowersPet.find_by(pet_id: pet.id, follower_id: session[:user_id]) %>
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          <% else %>
+            <form class="follow-button" action="" method="post">
+              <button id="follow-button" type="submit" name="button">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+              </button>
+            </form>
+
+          <% end %>
+        </div>
+        <div class="name">
+          <a class="pet-name" href="/pets/<%= pet.id %>"><p><%= pet.name %></p></a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
