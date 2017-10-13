@@ -1,9 +1,9 @@
 <div class="pet-details">
   <h2><p class="name"><%= @pet.name %></p></h2>
   <ul>
-    <li> <%= @pet.species %> </li>
-    <li> <%= @pet.color %> </li>
-    <li> <%= @pet.age %> </li>
+    <li> Type: <%= @pet.species %> </li>
+    <li> Color: <%= @pet.color %> </li>
+    <li> Age: <%= @pet.age %> </li>
   </ul>
 
   <% if session[:user_id] %>
